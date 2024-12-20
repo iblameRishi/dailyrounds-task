@@ -50,7 +50,7 @@ Ensure you have the following installed on your system:
   - `mongo_database.py`: Manages MongoDB connection and initialization.
 &nbsp;
 
-- **app/routes/**: Contains the API routes for users and admins.
+- **app/routes/**: Contains the API routes for uploading and searching.
   - `search.py`: Handles searching for the movie data.
   - `uploads.py`: Handles CSV file uploads.
 &nbsp;
