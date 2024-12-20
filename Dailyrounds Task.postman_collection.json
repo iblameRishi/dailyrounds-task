@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "99ac5594-2f03-4611-a9e5-4c0759808262",
+		"name": "Dailyrounds Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32167257"
+	},
+	"item": [
+		{
+			"name": "Upload CSV",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Dailyrounds Task/tests/data.csv"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Dailyrounds Task/tests/wrong_file.txt",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/upload/upload-csv/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"upload",
+						"upload-csv",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/search/search-movies?limit=2&language=Français&sort_by=release_date&sort_order=1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"search",
+						"search-movies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "15",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "language",
+							"value": "Français"
+						},
+						{
+							"key": "year",
+							"value": "2017",
+							"disabled": true
+						},
+						{
+							"key": "sort_by",
+							"value": "release_date"
+						},
+						{
+							"key": "sort_order",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
