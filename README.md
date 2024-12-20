@@ -43,7 +43,7 @@ Ensure you have the following installed on your system:
 
 ## Project Structure
 
-- **app/main.py**: Main file for the FastAPI application. It initializes the database and includes routers for user and admin endpoints.
+- **app/main.py**: Main file for the FastAPI application. It initializes the database and includes routes for uploading and searching.
 &nbsp;
 
 - **app/database/**: Contains database connection logic and Pydantic schemas for data validation.
