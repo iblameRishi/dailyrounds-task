@@ -77,7 +77,7 @@ Ensure you have the following installed on your system:
 
 ### View Uploaded Data Endpoint
 
-- **POST /admin/register**: Search for movie data.
+- **POST /search/search-movies**: Search for movie data.
     &nbsp;
    - Query parameters:
     - ```page``` : page number of the paginated data
