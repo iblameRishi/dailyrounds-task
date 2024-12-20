@@ -64,7 +64,8 @@ Ensure you have the following installed on your system:
 
 ### CSV Upload Endpoint
 
-- **POST /upload/upload-csv**: Register a new user.
+- **POST /upload/upload-csv**: Upload a CSV file.
+    &nbsp;
    - Send data in this format: `form-data` (in postman)
      ```
      file: File (the csv file)
@@ -76,7 +77,8 @@ Ensure you have the following installed on your system:
 
 ### View Uploaded Data Endpoint
 
-- **POST /admin/register**: Register a new admin.
+- **POST /admin/register**: Search for movie data.
+    &nbsp;
    - Query parameters:
     - ```page``` : page number of the paginated data
     - ```limit``` : Number of entries per page
