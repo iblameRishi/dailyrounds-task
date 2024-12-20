@@ -1,22 +1,22 @@
 import csv
-from app.database.mongo_database import db
+from app.database.mongo_database import client
 import ast
 
-async def read_and_upload_CSV_data(file):
-
+# Util Function to parse and save the movie data thats in the CSV file
+async def read_and_upload_CSV_data(file, testing):
+   db = client['TEST_DB'] if testing else client['imdb_task']
    contents = await file.read()  
    decoded_contents = contents.decode()
    reader = csv.DictReader(decoded_contents.splitlines())
 
+   # Some preprocessing, like making the numbers into int or float types instead of string and making sure the languages array is saved as an actual array
    data_to_insert = []
    for row in reader:
-      # Check if 'languages' is a string representation of a list
       if isinstance(row['languages'], str):
          try:
-               # Safely evaluate the string to a list
-               row['languages'] = ast.literal_eval(row['languages'])
+            # I have used the ast module to safely parse the string, and make sure no harmful content is being executed/processed
+            row['languages'] = ast.literal_eval(row['languages'])
          except (ValueError, SyntaxError):
-               # Handle cases where the conversion fails
                row['languages'] = []
          finally:
             row['budget'] = float(row['budget'])
@@ -29,5 +29,6 @@ async def read_and_upload_CSV_data(file):
 
             data_to_insert.append(row)
     
+   # Save to DB
    db.movies.insert_many(data_to_insert)
    print("Data uploaded successfully")

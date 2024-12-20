@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import List
 
+
+# Schema for sending the movie data out
 class MovieData(BaseModel):
     budget: float
     homepage: str
