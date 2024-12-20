@@ -90,7 +90,7 @@ Ensure you have the following installed on your system:
 
 
 ## Testing
-    Tests have been set up with Pytest, they are in the tests folder.
-    Run ```pytest``` in the console to run the tests.
+- Tests have been set up with Pytest, they are in the tests folder.
+- Run ```pytest``` in the console to run the tests.
 
 
